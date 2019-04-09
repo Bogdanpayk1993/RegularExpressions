@@ -27,7 +27,7 @@
                 var str1 = []
                 var reg = /\d/
                 document.write(`<p> ${str} </p>`)
-                str.forEach((x, i, arr) => {if(reg.test(x) == true) str1.push(arr[i]);})
+                str.forEach((x, i, arr) => {if(reg.test(x) == true) str1.push(arr[i]);})  Краще було використати filter
                 document.write(`<p> ${str1} </p>`)
             break
 
@@ -36,14 +36,14 @@
                 var str1 = []
                 var reg = /\d/
                 document.write(`<p> ${str} </p>`)
-                str.forEach((x, i, arr) => {if(reg.test(x) == false) str1.push(arr[i]);})
+                str.forEach((x, i, arr) => {if(reg.test(x) == false) str1.push(arr[i]);})   Filter!!!
                 document.write(`<p> ${str1} </p>`)
             break
 
             case 3:
                 var str = ["Молоко 10л","Хлб","Масло","Мука 5кг","Вода 120л"]
                 var str1 = []
-                var reg = /[а|е|є|и|і|ї|о|у|ю|я]/
+                var reg = /[а|е|є|и|і|ї|о|у|ю|я]/   // Не треба було писати символів "|"
                 document.write(`<p> ${str} </p>`)
                 str.forEach((x, i, arr) => {if(reg.test(x) == true) str1.push(arr[i]);})
                 document.write(`<p> ${str1} </p>`)
@@ -52,7 +52,7 @@
             case 4:
                 var str = ["Молоко 10л","Хлб","Масло","Мука 5кг","Вода 120л"]
                 var str1 = []
-                var reg = /[а|е|є|и|і|ї|о|у|ю|я]/
+                var reg = /[а|е|є|и|і|ї|о|у|ю|я]/      Аналогічно
                 document.write(`<p> ${str} </p>`)
                 str.forEach((x, i, arr) => {if(reg.test(x) == false) str1.push(arr[i]);})
                 document.write(`<p> ${str1} </p>`)
@@ -61,7 +61,7 @@
             case 5:
                 var str = ["Молоко 10л","Хлб","Масло","Мука 5кг","Вода 13л"]
                 var str1 = []
-                var reg = /[1|3]/
+                var reg = /[1|3]/                 Не треба було символів "|"
                 document.write(`<p> ${str} </p>`)
                 str.forEach((x, i, arr) => {if(reg.test(x) == true) str1.push(arr[i]);})
                 document.write(`<p> ${str1} </p>`)
@@ -69,8 +69,8 @@
 
             case 6:
                 var str = "Молоко 10л,Хліб,Масло,Мука 5кг,Вода 13л."
-                var str1 = []
-                var reg = /\d+/g;
+                var str1 = []                     
+                var reg = /\d+/g;        Якщо тільки числа, то треба було додати символи кінця слова "\b"
                 document.write(`<p> ${str} </p>`)
                 str1.push(str.match(reg))
                 document.write(`<p> ${str1} </p>`)
@@ -78,7 +78,7 @@
 
             case 7:
                 var str = "Молоко 10л,Хліб,Масло,Мука 5кг,Вода 13л."
-                var reg = /[.|,|-|!|?]/g;
+                var reg = /[.|,|-|!|?]/g;            Не треба символів "|"
                 document.write(`<p> ${str} </p>`)
                 var str1 = str.match(reg)
                 str1.forEach((x) => document.write(`${x} `))
@@ -86,7 +86,7 @@
 
             case 8:
                 var str = "Молоко 10л,Хліб,Масло,Мука 5кг,Вода 13л."
-                var reg = /[А-ЯІа-яі0-9|\s]+/g;
+                var reg = /[А-ЯІа-яі0-9|\s]+/g;     Аналогічно
                 document.write(`<p> ${str} </p>`)
                 var str1 = str.match(reg)
                 str1.forEach((x) => document.write(`${x} `))
@@ -102,7 +102,7 @@
 
             case 10:
                 var str = "88 4 32 56 122 89 62 512 38 54 7 32"
-                var reg = /\b\d\d\b/
+                var reg = /\b\d\d\b/      Краще було вказати кількість символів \d{2}
                 document.write(`<p> ${str} </p>`)
                 var str1 = str.split(' ')
                 var str2 = []
